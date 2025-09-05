@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PT Altindo Mitra Perkasa</title>
+
+        <!-- REMIXICON -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+
+        <!-- SWIPER CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+
+        <style>
+            /* ==================== VARIABLE CSS ==================== */
+            :root {
+                --header-height: 3.5rem;
+
+                /* ==================== COLORS ==================== */
+                --hue: 200;
+                --first-color: hsl(var(--hue), 69%, 61%);
+                --first-color-alt: hsl(var(--hue), 69%, 56%);
+                --title-color: hsl(var(--hue), 8%, 15%);
+                --text-color: hsl(var(--hue), 8%, 45%);
+                --text-color-light: hsl(var(--hue), 8%, 65%);
+                --body-color: hsl(var(--hue), 0%, 100%);
+                --container-color: hsl(var(--hue), 0%, 95%);
+                --border-color: hsl(var(--hue), 8%, 80%);
+                --border-color-card: hsl(var(--hue), 8%, 70%);
+                --white-color: #fff;
+                --body-bg: #f5f5f5;
+
+                /* ==================== FONT AND TYPOGRAPHY ==================== */
+                --body-font: "Poppins", sans-serif;
+                --biggest-font-size: 2.25rem;
+                --h1-font-size: 1.5rem;
+                --h2-font-size: 1.25rem;
+                --h3-font-size: 1rem;
+                --normal-font-size: 0.938rem;
+                --small-font-size: 0.813rem;
+                --smaller-font-size: 0.75rem;
+
+                /* ==================== FONT WEIGHT ==================== */
+                --font-medium: 500;
+                --font-semi-bold: 600;
+
+                /* ==================== Z INDEX ==================== */
+                --z-tooltip: 10;
+                --z-fixed: 100;
+            }
+
+            @media screen and (min-width: 968px) {
+                :root {
+                    --biggest-font-size: 4rem;
+                    --h1-font-size: 2.25rem;
+                    --h2-font-size: 1.75rem;
+                    --h3-font-size: 1.25rem;
+                    --normal-font-size: 1rem;
+                    --small-font-size: 0.875rem;
+                    --smaller-font-size: 0.813rem;
+                }
+            }
+
+            /* ==================== BASE ==================== */
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body,
+            button,
+            input {
+                font-family: var(--body-font);
+                font-size: var(--normal-font-size);
+                color: var(--text-color);
+            }
+
+            body {
+                background-color: var(--body-color);
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: var(--title-color);
+                font-weight: var(--font-semi-bold);
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            button {
+                cursor: pointer;
+                border: none;
+                outline: none;
+            }
+
+            /* ==================== REUSABLE CSS CLASSES ==================== */
+            .container {
+                max-width: 968px;
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .grid {
+                display: grid;
+            }
+
+            .section {
+                padding: 4.5rem 0 2rem;
+            }
+
+            .section__title {
+                font-size: var(--h2-font-size);
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .main {
+                overflow: hidden;
+            }
+
+            /* ==================== HEADER & NAV ==================== */
+            .header {
+                width: 100%;
+                background-color: transparent;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: var(--z-fixed);
+                transition: 0.4s;
+            }
+
+            .nav {
+                height: var(--header-height);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav__logo,
+            .nav__toggle,
+            .nav__close {
+                color: var(--white-color);
+            }
+
+            .nav__logo {
+                text-transform: uppercase;
+                font-weight: var(--font-semi-bold);
+                letter-spacing: 2px;
+                display: inline-flex;
+                align-items: center;
+                column-gap: 0.25rem;
+            }
+
+            .nav__logo i {
+                font-size: 1rem;
+            }
+
+            .nav__toggle,
+            .nav__close {
+                font-size: 1.25rem;
+                cursor: pointer;
+            }
+
+            /* Nav menu */
+            @media screen and (max-width: 767px) {
+                .nav__menu {
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    background-color: hsla(var(--hue), 0%, 100%, 0.3);
+                    backdrop-filter: blur(16px);
+                    -webkit-backdrop-filter: blur(16px);
+                    width: 70%;
+                    height: 100%;
+                    padding: 6rem 3rem 0;
+                    transition: 0.4s;
+                }
+            }
+
+            .nav__list {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2.5rem;
+            }
+
+            .nav__link {
+                color: var(--white-color);
+                font-weight: var(--font-semi-bold);
+                transition: 0.3s;
+            }
+
+            .nav__link:hover {
+                color: var(--first-color);
+            }
+
+            .nav__close {
+                position: absolute;
+                top: 1rem;
+                right: 1.5rem;
+            }
+
+            /* Show menu */
+            .show-menu {
+                right: 0;
+            }
+
+            /* Change header background */
+            .scroll-header {
+                background-color: var(--body-color);
+                box-shadow: 0 1px 4px hsla(var(--hue), 4%, 15%, 0.1);
+            }
+
+            .scroll-header .nav__logo,
+            .scroll-header .nav__toggle {
+                color: var(--title-color);
+            }
+
+            .scroll-header .nav__menu {
+                background-color: var(--container-color);
+            }
+
+            .scroll-header .nav__link {
+                color: var(--text-color);
+            }
+
+            .scroll-header .active-link {
+                color: var(--first-color);
+            }
+
+            /* Active link */
+            .active-link {
+                color: var(--first-color);
+            }
+
+            /* ==================== HOME ==================== */
+            .home__container {
+                position: relative;
+                row-gap: 2rem;
+                padding: 8rem 0 4rem;
+            }
+
+            .home__data {
+                text-align: center;
+            }
+
+            .home__title {
+                font-size: var(--biggest-font-size);
+                margin-bottom: 1rem;
+            }
+
+            .home__description {
+                margin-bottom: 2rem;
+            }
+
+            .home__button {
+                display: inline-block;
+                background-color: var(--first-color);
+                color: var(--white-color);
+                padding: 1rem 2rem;
+                border-radius: 4rem;
+                font-weight: var(--font-semi-bold);
+                transition: 0.3s;
+            }
+
+            .home__button:hover {
+                background-color: var(--first-color-alt);
+            }
+
+            .home__image {
+                width: 320px;
+                justify-self: center;
+            }
+
+            .home__shape {
+                width: 300px;
+                height: 300px;
+                background-color: var(--first-color);
+                border-radius: 50%;
+                position: absolute;
+                filter: blur(80px);
+                top: -3rem;
+                left: -8rem;
+            }
+
+            /* ==================== ABOUT ==================== */
+            .about__container {
+                row-gap: 2rem;
+            }
+
+            .about__data {
+                text-align: center;
+            }
+
+            .about__description {
+                margin-bottom: 2rem;
+            }
+
+            .about__image {
+                width: 280px;
+                justify-self: center;
+            }
+
+            /* ==================== SERVICES ==================== */
+            .services__container {
+                row-gap: 2rem;
+            }
+
+            .services__card {
+                background-color: var(--container-color);
+                padding: 3.5rem 2rem;
+                border-radius: 1rem;
+                text-align: center;
+                border: 2px solid var(--border-color);
+                transition: 0.4s;
+            }
+
+            .services__card:hover {
+                border: 2px solid var(--border-color-card);
+                transform: translateY(-0.5rem);
+            }
+
+            .services__icon {
+                font-size: 2.5rem;
+                color: var(--first-color);
+            }
+
+            .services__title {
+                font-size: var(--h3-font-size);
+                margin-bottom: 1rem;
+            }
+
+            /* ==================== PROJECTS ==================== */
+            .projects__container {
+                padding-top: 1rem;
+                row-gap: 2rem;
+            }
+
+            .projects__card {
+                position: relative;
+                border-radius: 1rem;
+                overflow: hidden;
+            }
+
+            .projects__image {
+                transition: 0.4s;
+            }
+
+            .projects__card:hover .projects__image {
+                transform: scale(1.1);
+            }
+
+            .projects__data {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background: linear-gradient(
+                    180deg,
+                    hsla(var(--hue), 24%, 40%, 0.3) 0%,
+                    hsla(var(--hue), 24%, 4%, 1) 95%
+                );
+                padding: 1rem;
+            }
+
+            .projects__title {
+                color: var(--white-color);
+                font-size: var(--h3-font-size);
+                margin-bottom: 0.25rem;
+            }
+
+            .projects__subtitle {
+                font-size: var(--small-font-size);
+                color: var(--white-color);
+            }
+
+            /* ==================== CLIENTS ==================== */
+            .clients__container {
+                padding-top: 1rem;
+                row-gap: 2rem;
+            }
+
+            .clients__card {
+                background-color: var(--container-color);
+                padding: 1.5rem 1rem;
+                border-radius: 1rem;
+                text-align: center;
+                border: 2px solid var(--border-color);
+                transition: 0.4s;
+            }
+
+            .clients__card:hover {
+                border: 2px solid var(--border-color-card);
+                transform: translateY(-0.5rem);
+            }
+
+            /* ==================== TESTIMONIALS ==================== */
+            .testimonials__container {
+                padding-top: 1rem;
+            }
+
+            .testimonial__card {
+                background-color: var(--container-color);
+                padding: 1rem;
+                border-radius: 1rem;
+            }
+
+            .testimonial__header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            .testimonial__img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 0.5rem;
+            }
+
+            .testimonial__name {
+                font-size: var(--h3-font-size);
+            }
+
+            .testimonial__subtitle {
+                font-size: var(--smaller-font-size);
+            }
+
+            .testimonial__description {
+                font-style: italic;
+            }
+
+            /* ==================== CONTACT ==================== */
+            .contact__container {
+                row-gap: 2rem;
+                padding-bottom: 3rem;
+            }
+
+            .contact__info {
+                display: grid;
+                gap: 1.5rem;
+            }
+
+            .contact__card {
+                background-color: var(--container-color);
+                padding: 1rem;
+                border-radius: 0.75rem;
+                border: 2px solid var(--border-color);
+            }
+
+            .contact__card-title,
+            .contact__card-description {
+                font-size: var(--small-font-size);
+            }
+
+            .contact__card-title {
+                font-weight: var(--font-medium);
+            }
+
+            .contact__form {
+                display: grid;
+                row-gap: 1.5rem;
+            }
+
+            .contact__group,
+            .contact__input,
+            .contact__textarea {
+                width: 100%;
+            }
+
+            .contact__input,
+            .contact__textarea {
+                background-color: var(--container-color);
+                border: 2px solid var(--border-color);
+                padding: 1rem;
+                border-radius: 0.75rem;
+            }
+
+            .contact__button {
+                justify-self: center;
+                border: none;
+            }
+
+            /* ==================== FOOTER ==================== */
+            .footer {
+                background-color: var(--first-color);
+                padding: 3.5rem 0 2rem;
+            }
+
+            .footer__container {
+                row-gap: 2rem;
+            }
+
+            .footer__logo {
+                color: var(--white-color);
+                text-transform: uppercase;
+                font-weight: var(--font-semi-bold);
+                letter-spacing: 2px;
+                display: inline-flex;
+                align-items: center;
+                column-gap: 0.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer__description {
+                color: var(--white-color);
+                font-size: var(--small-font-size);
+                margin-bottom: 1rem;
+            }
+
+            .footer__social {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+            .footer__social-link {
+                display: inline-flex;
+                background-color: var(--white-color);
+                color: var(--first-color);
+                padding: 0.25rem;
+                border-radius: 0.25rem;
+                font-size: 1.25rem;
+                transition: 0.3s;
+            }
+
+            .footer__social-link:hover {
+                transform: translateY(-0.25rem);
+            }
+
+            .footer__title {
+                font-size: var(--h3-font-size);
+                color: var(--white-color);
+                margin-bottom: 1rem;
+            }
+
+            .footer__list {
+                display: grid;
+                gap: 1rem;
+            }
+
+            .footer__link {
+                color: var(--white-color);
+                transition: 0.3s;
+            }
+
+            .footer__link:hover {
+                text-decoration: underline;
+            }
+
+            .footer__copy {
+                text-align: center;
+                margin-top: 3.5rem;
+                color: var(--white-color);
+                font-size: var(--smaller-font-size);
+            }
+
+            /* ==================== SCROLL BAR ==================== */
+            ::-webkit-scrollbar {
+                width: 0.6rem;
+                background-color: hsl(var(--hue), 8%, 80%);
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: hsl(var(--hue), 8%, 64%);
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: hsl(var(--hue), 8%, 54%);
+            }
+
+            /* ==================== SCROLL UP ==================== */
+            .scrollup {
+                position: fixed;
+                right: 1rem;
+                bottom: -30%;
+                background-color: var(--first-color);
+                color: var(--white-color);
+                display: inline-flex;
+                padding: 0.35rem;
+                border-radius: 0.25rem;
+                z-index: var(--z-tooltip);
+                transition: 0.4s;
+            }
+
+            .scrollup:hover {
+                transform: translateY(-0.25rem);
+            }
+
+            /* Show Scroll Up */
+            .show-scroll {
+                bottom: 3rem;
+            }
+
+            /* ==================== BREAKPOINTS ==================== */
+            /* For small devices */
+            @media screen and (max-width: 340px) {
+                .container {
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                }
+
+                .home__title {
+                    font-size: 2rem;
+                }
+
+                .home__image {
+                    width: 250px;
+                }
+            }
+
+            /* For medium devices */
+            @media screen and (min-width: 576px) {
+                .home__container {
+                    grid-template-columns: 0.8fr 1fr;
+                    align-items: center;
+                }
+
+                .about__container {
+                    grid-template-columns: repeat(2, 1fr);
+                    align-items: center;
+                }
+
+                .services__container,
+                .projects__container,
+                .testimonials__container,
+                .clients__container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .contact__container {
+                    grid-template-columns: 0.8fr 1fr;
+                    justify-content: center;
+                }
+
+                .contact__form {
+                    width: 100%;
+                }
+
+                .footer__container {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            @media screen and (min-width: 767px) {
+                body {
+                    margin: 0;
+                }
+                .nav__menu {
+                    width: initial;
+                    position: initial;
+                    background-color: initial;
+                    backdrop-filter: none;
+                    -webkit-backdrop-filter: none;
+                }
+                .nav__list {
+                    flex-direction: row;
+                    column-gap: 2rem;
+                }
+                .nav__link {
+                    color: var(--text-color);
+                }
+                .nav__close,
+                .nav__toggle {
+                    display: none;
+                }
+                .home__container {
+                    padding: 10rem 0 4rem;
+                    grid-template-columns: 1fr 0.8fr;
+                }
+                .home__data {
+                    text-align: initial;
+                }
+                .about__data {
+                    text-align: initial;
+                }
+                .section {
+                    padding: 7rem 0 2rem;
+                }
+                .section__title {
+                    margin-bottom: 3rem;
+                }
+                .footer__container {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                .scroll-header .nav__link {
+                    color: var(--text-color);
+                }
+                .nav__logo,
+                .nav__toggle {
+                    color: var(--title-color);
+                }
+                .scroll-header .nav__logo,
+                .scroll-header .nav__toggle {
+                    color: var(--title-color);
+                }
+                .active-link {
+                    color: var(--first-color);
+                }
+                .scroll-header .nav__link:hover {
+                    color: var(--first-color);
+                }
+            }
+
+            /* For large devices */
+            @media screen and (min-width: 968px) {
+                .container {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .home__container {
+                    grid-template-columns: 1fr 0.8fr;
+                }
+                .about__container {
+                    grid-template-columns: 1fr 0.8fr;
+                }
+                .services__container,
+                .projects__container,
+                .testimonials__container,
+                .clients__container {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                .contact__container {
+                    grid-template-columns: 1fr 0.8fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ==================== HEADER ==================== -->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-seedling-line"></i> PT Altindo
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link"
+                                >Beranda</a
+                            >
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">Tentang Kami</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#services" class="nav__link">Layanan</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#projects" class="nav__link">Proyek</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#clients" class="nav__link">Klien</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#testimonials" class="nav__link"
+                                >Testimoni</a
+                            >
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Kontak</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ==================== MAIN ==================== -->
+        <main class="main">
+            <!-- ==================== HOME ==================== -->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Solusi Inovatif untuk Proyek Anda
+                        </h1>
+                        <p class="home__description">
+                            PT Altindo Mitra Perkasa menyediakan layanan terbaik
+                            untuk setiap kebutuhan proyek.
+                        </p>
+                        <a href="#about" class="home__button"
+                            >Pelajari Lebih Lanjut</a
+                        >
+                    </div>
+                    <div class="home__image">
+                        <!-- Placeholder untuk gambar hero -->
+                        <img
+                            src="https://placehold.co/320x320/0275d8/ffffff?text=Perusahaan+Inovatif"
+                            alt="Hero Image"
+                        />
+                    </div>
+                    <div class="home__shape"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ABOUT ==================== -->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__image">
+                        <!-- Placeholder untuk gambar tentang kami -->
+                        <img
+                            src="https://placehold.co/280x280/e5e7eb/4b5563?text=Tim+Profesional"
+                            alt="About Image"
+                        />
+                    </div>
+                    <div class="about__data">
+                        <h2 class="section__title">Tentang Kami</h2>
+                        <p class="about__description">
+                            PT Altindo Mitra Perkasa adalah perusahaan yang
+                            berfokus pada penyediaan solusi teknologi dan
+                            konstruksi. Kami berdedikasi untuk memberikan hasil
+                            terbaik dan kepuasan pelanggan.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SERVICES ==================== -->
+            <section class="services section" id="services">
+                <h2 class="section__title">Layanan Kami</h2>
+                <div class="services__container container grid">
+                    <article class="services__card">
+                        <i class="ri-tools-line services__icon"></i>
+                        <h3 class="services__title">Konstruksi</h3>
+                        <p class="services__description">
+                            Layanan konstruksi profesional untuk proyek skala
+                            kecil hingga besar.
+                        </p>
+                    </article>
+                    <article class="services__card">
+                        <i class="ri-bar-chart-2-line services__icon"></i>
+                        <h3 class="services__title">Konsultasi</h3>
+                        <p class="services__description">
+                            Konsultasi ahli untuk membantu merencanakan dan
+                            mengelola proyek Anda.
+                        </p>
+                    </article>
+                    <article class="services__card">
+                        <i class="ri-ruler-line services__icon"></i>
+                        <h3 class="services__title">Arsitektur</h3>
+                        <p class="services__description">
+                            Desain arsitektur inovatif yang menciptakan ruang
+                            fungsional dan estetis.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ==================== PROJECTS ==================== -->
+            <section class="projects section" id="projects">
+                <h2 class="section__title">Proyek Kami</h2>
+                <div class="projects__container container grid">
+                    <article class="projects__card">
+                        <img
+                            src="https://placehold.co/300x200/cccccc/333333?text=Proyek+A"
+                            alt="Project Image"
+                            class="projects__image"
+                        />
+                        <div class="projects__data">
+                            <h3 class="projects__title">
+                                Proyek Pembangunan Gedung
+                            </h3>
+                            <span class="projects__subtitle">Konstruksi</span>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <img
+                            src="https://placehold.co/300x200/cccccc/333333?text=Proyek+B"
+                            alt="Project Image"
+                            class="projects__image"
+                        />
+                        <div class="projects__data">
+                            <h3 class="projects__title">Proyek Jembatan</h3>
+                            <span class="projects__subtitle">Konstruksi</span>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <img
+                            src="https://placehold.co/300x200/cccccc/333333?text=Proyek+C"
+                            alt="Project Image"
+                            class="projects__image"
+                        />
+                        <div class="projects__data">
+                            <h3 class="projects__title">
+                                Proyek Desain Interior
+                            </h3>
+                            <span class="projects__subtitle">Arsitektur</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ==================== CLIENTS ==================== -->
+            <section class="clients section" id="clients">
+                <h2 class="section__title">Klien Kami</h2>
+                <div class="clients__container container swiper">
+                    <div class="swiper-wrapper">
+                        <article class="clients__card swiper-slide">
+                            <img
+                                src="https://placehold.co/100x50/333/fff?text=Logo+Klien+1"
+                                alt="Client Logo"
+                            />
+                        </article>
+                        <article class="clients__card swiper-slide">
+                            <img
+                                src="https://placehold.co/100x50/333/fff?text=Logo+Klien+2"
+                                alt="Client Logo"
+                            />
+                        </article>
+                        <article class="clients__card swiper-slide">
+                            <img
+                                src="https://placehold.co/100x50/333/fff?text=Logo+Klien+3"
+                                alt="Client Logo"
+                            />
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== TESTIMONIALS ==================== -->
+            <section class="testimonials section" id="testimonials">
+                <h2 class="section__title">Apa Kata Mereka</h2>
+                <div class="testimonials__container container swiper">
+                    <div class="swiper-wrapper">
+                        <article class="testimonial__card swiper-slide">
+                            <div class="testimonial__header">
+                                <img
+                                    src="https://placehold.co/50x50/e5e7eb/4b5563?text=P1"
+                                    alt="Testimonial Pfp"
+                                    class="testimonial__img"
+                                />
+                                <div>
+                                    <h3 class="testimonial__name">Jane Doe</h3>
+                                    <span class="testimonial__subtitle"
+                                        >CEO Perusahaan X</span
+                                    >
+                                </div>
+                            </div>
+                            <p class="testimonial__description">
+                                "Luar biasa! Mereka menyelesaikan proyek dengan
+                                cepat dan hasilnya sangat memuaskan."
+                            </p>
+                        </article>
+                        <article class="testimonial__card swiper-slide">
+                            <div class="testimonial__header">
+                                <img
+                                    src="https://placehold.co/50x50/e5e7eb/4b5563?text=P2"
+                                    alt="Testimonial Pfp"
+                                    class="testimonial__img"
+                                />
+                                <div>
+                                    <h3 class="testimonial__name">
+                                        John Smith
+                                    </h3>
+                                    <span class="testimonial__subtitle"
+                                        >Manajer Proyek</span
+                                    >
+                                </div>
+                            </div>
+                            <p class="testimonial__description">
+                                "Tim yang profesional dan sangat responsif.
+                                Sangat merekomendasikan layanan mereka."
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== CONTACT ==================== -->
+            <section class="contact section" id="contact">
+                <h2 class="section__title">Hubungi Kami</h2>
+                <div class="contact__container container grid">
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <h3 class="contact__card-title">Alamat</h3>
+                            <p class="contact__card-description">
+                                Jl. Contoh No. 123, Jakarta, Indonesia
+                            </p>
+                        </div>
+                        <div class="contact__card">
+                            <h3 class="contact__card-title">Email</h3>
+                            <p class="contact__card-description">
+                                info@ptaltindo.com
+                            </p>
+                        </div>
+                        <div class="contact__card">
+                            <h3 class="contact__card-title">Telepon</h3>
+                            <p class="contact__card-description">
+                                +62 812-3456-7890
+                            </p>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form">
+                        <div class="contact__group">
+                            <input
+                                type="text"
+                                name="name"
+                                required
+                                placeholder="Nama Lengkap"
+                                class="contact__input"
+                            />
+                        </div>
+                        <div class="contact__group">
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                                placeholder="Alamat Email"
+                                class="contact__input"
+                            />
+                        </div>
+                        <div class="contact__group">
+                            <textarea
+                                name="message"
+                                required
+                                placeholder="Pesan Anda"
+                                class="contact__textarea"
+                            ></textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            class="contact__button home__button"
+                        >
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="footer">
+            <div class="footer__container container grid">
+                <div>
+                    <a href="#" class="footer__logo">
+                        <i class="ri-seedling-line"></i> PT Altindo
+                    </a>
+                    <p class="footer__description">
+                        Solusi terdepan untuk setiap <br />
+                        kebutuhan proyek Anda.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Perusahaan</h3>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#about" class="footer__link"
+                                >Tentang Kami</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#services" class="footer__link">Layanan</a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="footer__link">Proyek</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Dukungan</h3>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#contact" class="footer__link">Kontak</a>
+                        </li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                        <li>
+                            <a href="#" class="footer__link"
+                                >Kebijakan Privasi</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Alamat</h3>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#" class="footer__link"
+                                >Jl. Contoh No. 123, <br />
+                                Jakarta, Indonesia</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="footer__copy">
+                &#169; 2023 PT Altindo Mitra Perkasa. All Rights Reserved.
+            </p>
+        </footer>
+
+        <!-- SCROLL UP -->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+        </a>
+
+        <!-- SWIPER JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- MAIN JS -->
+        <script>
+            /* ==================== SHOW MENU ==================== */
+            const navMenu = document.getElementById("nav-menu"),
+                navToggle = document.getElementById("nav-toggle"),
+                navClose = document.getElementById("nav-close");
+
+            /* Menu show */
+            if (navToggle) {
+                navToggle.addEventListener("click", () => {
+                    navMenu.classList.add("show-menu");
+                });
+            }
+
+            /* Menu hidden */
+            if (navClose) {
+                navClose.addEventListener("click", () => {
+                    navMenu.classList.remove("show-menu");
+                });
+            }
+
+            /* ==================== REMOVE MENU MOBILE ==================== */
+            const navLink = document.querySelectorAll(".nav__link");
+
+            function linkAction() {
+                const navMenu = document.getElementById("nav-menu");
+                navMenu.classList.remove("show-menu");
+            }
+            navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+            /* ==================== CHANGE BACKGROUND HEADER ==================== */
+            function scrollHeader() {
+                const header = document.getElementById("header");
+                if (this.scrollY >= 50) header.classList.add("scroll-header");
+                else header.classList.remove("scroll-header");
+            }
+            window.addEventListener("scroll", scrollHeader);
+
+            /* ==================== TESTIMONIAL SWIPER ==================== */
+            let testimonialSwiper = new Swiper(".testimonials__container", {
+                spaceBetween: 24,
+                loop: true,
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 48,
+                    },
+                },
+            });
+
+            /* ==================== CLIENTS SWIPER ==================== */
+            let clientsSwiper = new Swiper(".clients__container", {
+                spaceBetween: 24,
+                loop: true,
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 48,
+                    },
+                },
+            });
+
+            /* ==================== SCROLL SECTIONS ACTIVE LINK ==================== */
+            const sections = document.querySelectorAll("section[id]");
+
+            function scrollActive() {
+                const scrollY = window.pageYOffset;
+
+                sections.forEach((current) => {
+                    const sectionHeight = current.offsetHeight,
+                        sectionTop = current.offsetTop - 58,
+                        sectionId = current.getAttribute("id");
+
+                    if (
+                        scrollY > sectionTop &&
+                        scrollY <= sectionTop + sectionHeight
+                    ) {
+                        document
+                            .querySelector(
+                                ".nav__menu a[href*=" + sectionId + "]"
+                            )
+                            .classList.add("active-link");
+                    } else {
+                        document
+                            .querySelector(
+                                ".nav__menu a[href*=" + sectionId + "]"
+                            )
+                            .classList.remove("active-link");
+                    }
+                });
+            }
+            window.addEventListener("scroll", scrollActive);
+
+            /* ==================== SCROLL UP ==================== */
+            function scrollUp() {
+                const scrollUp = document.getElementById("scroll-up");
+                if (this.scrollY >= 200) scrollUp.classList.add("show-scroll");
+                else scrollUp.classList.remove("show-scroll");
+            }
+            window.addEventListener("scroll", scrollUp);
+        </script>
+    </body>
+</html>
