@@ -1,0 +1,2024 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/flickity-fade@2/flickity-fade.css" rel="stylesheet">
+    <style>
+        /* public/assets/css/output.css */
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb;
+        }
+
+        ::before,
+        ::after {
+            --tw-content: '';
+        }
+
+        html,
+        :host {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit;
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px;
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        b,
+        strong {
+            font-weight: bolder;
+        }
+
+        code,
+        kbd,
+        samp,
+        pre {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em;
+        }
+
+        small {
+            font-size: 80%;
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sub {
+            bottom: -0.25em;
+        }
+
+        sup {
+            top: -0.5em;
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        input:where([type='button']),
+        input:where([type='reset']),
+        input:where([type='submit']) {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none;
+        }
+
+        :-moz-focusring {
+            outline: auto;
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none;
+        }
+
+        progress {
+            vertical-align: baseline;
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto;
+        }
+
+        [type='search'] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+        }
+
+        summary {
+            display: list-item;
+        }
+
+        blockquote,
+        dl,
+        dd,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        figure,
+        p,
+        pre {
+            margin: 0;
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0;
+        }
+
+        legend {
+            padding: 0;
+        }
+
+        ol,
+        ul,
+        menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        dialog {
+            padding: 0;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input::-moz-placeholder,
+        textarea::-moz-placeholder {
+            opacity: 1;
+            color: #9ca3af;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af;
+        }
+
+        button,
+        [role="button"] {
+            cursor: pointer;
+        }
+
+        :disabled {
+            cursor: default;
+        }
+
+        img,
+        svg,
+        video,
+        canvas,
+        audio,
+        iframe,
+        embed,
+        object {
+            display: block;
+            vertical-align: middle;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        [hidden] {
+            display: none;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 300ms ease-in-out;
+        }
+
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x:;
+            --tw-pan-y:;
+            --tw-pinch-zoom:;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position:;
+            --tw-gradient-via-position:;
+            --tw-gradient-to-position:;
+            --tw-ordinal:;
+            --tw-slashed-zero:;
+            --tw-numeric-figure:;
+            --tw-numeric-spacing:;
+            --tw-numeric-fraction:;
+            --tw-ring-inset:;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur:;
+            --tw-brightness:;
+            --tw-contrast:;
+            --tw-grayscale:;
+            --tw-hue-rotate:;
+            --tw-invert:;
+            --tw-saturate:;
+            --tw-sepia:;
+            --tw-drop-shadow:;
+            --tw-backdrop-blur:;
+            --tw-backdrop-brightness:;
+            --tw-backdrop-contrast:;
+            --tw-backdrop-grayscale:;
+            --tw-backdrop-hue-rotate:;
+            --tw-backdrop-invert:;
+            --tw-backdrop-opacity:;
+            --tw-backdrop-saturate:;
+            --tw-backdrop-sepia:;
+            --tw-contain-size:;
+            --tw-contain-layout:;
+            --tw-contain-paint:;
+            --tw-contain-style:;
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x:;
+            --tw-pan-y:;
+            --tw-pinch-zoom:;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position:;
+            --tw-gradient-via-position:;
+            --tw-gradient-to-position:;
+            --tw-ordinal:;
+            --tw-slashed-zero:;
+            --tw-numeric-figure:;
+            --tw-numeric-spacing:;
+            --tw-numeric-fraction:;
+            --tw-ring-inset:;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur:;
+            --tw-brightness:;
+            --tw-contrast:;
+            --tw-grayscale:;
+            --tw-hue-rotate:;
+            --tw-invert:;
+            --tw-saturate:;
+            --tw-sepia:;
+            --tw-drop-shadow:;
+            --tw-backdrop-blur:;
+            --tw-backdrop-brightness:;
+            --tw-backdrop-contrast:;
+            --tw-backdrop-grayscale:;
+            --tw-backdrop-hue-rotate:;
+            --tw-backdrop-invert:;
+            --tw-backdrop-opacity:;
+            --tw-backdrop-saturate:;
+            --tw-backdrop-sepia:;
+            --tw-contain-size:;
+            --tw-contain-layout:;
+            --tw-contain-paint:;
+            --tw-contain-style:;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px;
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .inset-0 {
+            inset: 0px;
+        }
+
+        .-bottom-\[135px\] {
+            bottom: -135px;
+        }
+
+        .left-0 {
+            left: 0px;
+        }
+
+        .right-0 {
+            right: 0px;
+        }
+
+        .top-0 {
+            top: 0px;
+        }
+
+        .-z-10 {
+            z-index: -10;
+        }
+
+        .z-0 {
+            z-index: 0;
+        }
+
+        .z-10 {
+            z-index: 10;
+        }
+
+        .z-40 {
+            z-index: 40;
+        }
+
+        .z-50 {
+            z-index: 50;
+        }
+
+        .-mx-\[10px\] {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mx-\[calc\(\(100vw-1130px\)\/2\)\] {
+            margin-left: calc((100vw - 1130px) / 2);
+            margin-right: calc((100vw - 1130px) / 2);
+        }
+
+        .-mb-20 {
+            margin-bottom: -5rem;
+        }
+
+        .-mb-\[388px\] {
+            margin-bottom: -388px;
+        }
+
+        .-mb-\[488px\] {
+            margin-bottom: -488px;
+        }
+
+        .ms-auto {
+            margin-inline-start: auto;
+        }
+
+        .mt-20 {
+            margin-top: 5rem;
+        }
+
+        .mt-\[3px\] {
+            margin-top: 3px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .inline-flex {
+            display: inline-flex;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .aspect-\[16\/9\] {
+            aspect-ratio: 16/9;
+        }
+
+        .h-1 {
+            height: 0.25rem;
+        }
+
+        .h-3 {
+            height: 0.75rem;
+        }
+
+        .h-5 {
+            height: 1.25rem;
+        }
+
+        .h-6 {
+            height: 1.5rem;
+        }
+
+        .h-8 {
+            height: 2rem;
+        }
+
+        .h-9 {
+            height: 2.25rem;
+        }
+
+        .h-\[100px\] {
+            height: 100px;
+        }
+
+        .h-\[18px\] {
+            height: 18px;
+        }
+
+        .h-\[200px\] {
+            height: 200px;
+        }
+
+        .h-\[43px\] {
+            height: 43px;
+        }
+
+        .h-\[550px\] {
+            height: 550px;
+        }
+
+        .h-\[55px\] {
+            height: 55px;
+        }
+
+        .h-\[600px\] {
+            height: 600px;
+        }
+
+        .h-\[60px\] {
+            height: 60px;
+        }
+
+        .h-\[68px\] {
+            height: 68px;
+        }
+
+        .h-\[700px\] {
+            height: 700px;
+        }
+
+        .h-\[90px\] {
+            height: 90px;
+        }
+
+        .h-\[calc\(100\%-1rem\)\] {
+            height: calc(100% - 1rem);
+        }
+
+        .h-fit {
+            height: -moz-fit-content;
+            height: fit-content;
+        }
+
+        .h-full {
+            height: 100%;
+        }
+
+        .h-2 {
+            height: 0.5rem;
+        }
+
+        .h-4 {
+            height: 1rem;
+        }
+
+        .max-h-full {
+            max-height: 100%;
+        }
+
+        .w-1\/2 {
+            width: 50%;
+        }
+
+        .w-10 {
+            width: 2.5rem;
+        }
+
+        .w-3 {
+            width: 0.75rem;
+        }
+
+        .w-5 {
+            width: 1.25rem;
+        }
+
+        .w-6 {
+            width: 1.5rem;
+        }
+
+        .w-8 {
+            width: 2rem;
+        }
+
+        .w-9 {
+            width: 2.25rem;
+        }
+
+        .w-\[100px\] {
+            width: 100px;
+        }
+
+        .w-\[18px\] {
+            width: 18px;
+        }
+
+        .w-\[200px\] {
+            width: 200px;
+        }
+
+        .w-\[43\%\] {
+            width: 43%;
+        }
+
+        .w-\[470px\] {
+            width: 470px;
+        }
+
+        .w-\[55px\] {
+            width: 55px;
+        }
+
+        .w-\[565px\] {
+            width: 565px;
+        }
+
+        .w-\[60px\] {
+            width: 60px;
+        }
+
+        .w-\[700px\] {
+            width: 700px;
+        }
+
+        .w-\[90px\] {
+            width: 90px;
+        }
+
+        .w-fit {
+            width: -moz-fit-content;
+            width: fit-content;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .w-\[356\.67px\] {
+            width: 356.67px;
+        }
+
+        .max-w-\[1000px\] {
+            max-width: 1000px;
+        }
+
+        .max-w-\[1130px\] {
+            max-width: 1130px;
+        }
+
+        .max-w-\[437px\] {
+            max-width: 437px;
+        }
+
+        .max-w-\[500px\] {
+            max-width: 500px;
+        }
+
+        .max-w-\[536px\] {
+            max-width: 536px;
+        }
+
+        .shrink-0 {
+            flex-shrink: 0;
+        }
+
+        .rotate-180 {
+            --tw-rotate: 180deg;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+        }
+
+        .resize-none {
+            resize: none;
+        }
+
+        .appearance-none {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .grid-cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+
+        .flex-nowrap {
+            flex-wrap: nowrap;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .gap-1 {
+            gap: 0.25rem;
+        }
+
+        .gap-10 {
+            gap: 2.5rem;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-20 {
+            gap: 5rem;
+        }
+
+        .gap-3 {
+            gap: 0.75rem;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .gap-5 {
+            gap: 1.25rem;
+        }
+
+        .gap-6 {
+            gap: 1.5rem;
+        }
+
+        .gap-\[10px\] {
+            gap: 10px;
+        }
+
+        .gap-\[120px\] {
+            gap: 120px;
+        }
+
+        .gap-\[14px\] {
+            gap: 14px;
+        }
+
+        .gap-\[18px\] {
+            gap: 18px;
+        }
+
+        .gap-\[30px\] {
+            gap: 30px;
+        }
+
+        .gap-\[50px\] {
+            gap: 50px;
+        }
+
+        .gap-\[60px\] {
+            gap: 60px;
+        }
+
+        .gap-\[112px\] {
+            gap: 112px;
+        }
+
+        .gap-y-3 {
+            row-gap: 0.75rem;
+        }
+
+        .gap-y-4 {
+            row-gap: 1rem;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        .overflow-y-auto {
+            overflow-y: auto;
+        }
+
+        .overflow-x-hidden {
+            overflow-x: hidden;
+        }
+
+        .rounded-2xl {
+            border-radius: 1rem;
+        }
+
+        .rounded-\[18px\] {
+            border-radius: 18px;
+        }
+
+        .rounded-\[20px\] {
+            border-radius: 20px;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .rounded-t {
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+
+        .border {
+            border-width: 1px;
+        }
+
+        .border-b {
+            border-bottom-width: 1px;
+        }
+
+        .border-none {
+            border-style: none;
+        }
+
+        .border-\[\#E8EAF2\] {
+            --tw-border-opacity: 1;
+            border-color: rgb(232 234 242 / var(--tw-border-opacity));
+        }
+
+        .border-white {
+            --tw-border-opacity: 1;
+            border-color: rgb(255 255 255 / var(--tw-border-opacity));
+        }
+
+        .bg-\[\#D9D9D9\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+        }
+
+        .bg-\[\#E8EAF2\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(232 234 242 / var(--tw-bg-opacity));
+        }
+
+        .bg-\[\#F6F7FA\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(246 247 250 / var(--tw-bg-opacity));
+        }
+
+        .bg-cp-darker-red {
+            --tw-bg-opacity: 1;
+            background-color: #7F0000;
+        }
+
+        .bg-cp-dark-red {
+            --tw-bg-opacity: 1;
+            background-color: #FF0000;
+        }
+
+        .bg-cp-light-blue {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 122 255 / var(--tw-bg-opacity));
+        }
+
+        .bg-cp-pale-blue {
+            --tw-bg-opacity: 1;
+            background-color: rgb(242 248 255 / var(--tw-bg-opacity));
+        }
+
+        .bg-gray-900\/50 {
+            background-color: rgb(17 24 39 / 0.5);
+        }
+
+        .bg-transparent {
+            background-color: transparent;
+        }
+
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+        }
+
+        .bg-\[linear-gradient\(150\.55deg\2c _\#007AFF_8\.72\%\2c _\#312ECB_87\.11\%\)\] {
+            background-image: linear-gradient(150.55deg, #FF0000 8.72%, #D80000 87.11%);
+        }
+
+        .object-contain {
+            -o-object-fit: contain;
+            object-fit: contain;
+        }
+
+        .object-cover {
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .object-center {
+            -o-object-position: center;
+            object-position: center;
+        }
+
+        .p-0 {
+            padding: 0px;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .p-5 {
+            padding: 1.25rem;
+        }
+
+        .p-\[0_30px_30px_30px\] {
+            padding: 0 30px 30px 30px;
+        }
+
+        .p-\[10px\] {
+            padding: 10px;
+        }
+
+        .p-\[14px_20px\] {
+            padding: 14px 20px;
+        }
+
+        .p-\[20px_30px\] {
+            padding: 20px 30px;
+        }
+
+        .p-\[30px\] {
+            padding: 30px;
+        }
+
+        .p-\[8px_16px\] {
+            padding: 8px 16px;
+        }
+
+        .px-\[10px\] {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .px-\[29px\] {
+            padding-left: 29px;
+            padding-right: 29px;
+        }
+
+        .py-10 {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .py-\[50px\] {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .px-\[calc\(\(100vw-1130px\)\/2\)\] {
+            padding-left: calc((100vw - 1130px) / 2);
+            padding-right: calc((100vw - 1130px) / 2);
+        }
+
+        .pb-20 {
+            padding-bottom: 5rem;
+        }
+
+        .pb-\[220px\] {
+            padding-bottom: 220px;
+        }
+
+        .pl-\[30px\] {
+            padding-left: 30px;
+        }
+
+        .pt-10 {
+            padding-top: 2.5rem;
+        }
+
+        .pt-\[100px\] {
+            padding-top: 100px;
+        }
+
+        .pt-\[14px\] {
+            padding-top: 14px;
+        }
+
+        .pt-\[27px\] {
+            padding-top: 27px;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .font-poppins {
+            font-family: Poppins;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+
+        .text-\[250px\] {
+            font-size: 250px;
+        }
+
+        .text-\[50px\] {
+            font-size: 50px;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .font-extrabold {
+            font-weight: 800;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .leading-\[26px\] {
+            line-height: 26px;
+        }
+
+        .leading-\[27px\] {
+            line-height: 27px;
+        }
+
+        .leading-\[30px\] {
+            line-height: 30px;
+        }
+
+        .leading-\[375px\] {
+            line-height: 375px;
+        }
+
+        .leading-\[45px\] {
+            line-height: 45px;
+        }
+
+        .leading-\[46px\] {
+            line-height: 46px;
+        }
+
+        .leading-\[54px\] {
+            line-height: 54px;
+        }
+
+        .leading-\[65px\] {
+            line-height: 65px;
+        }
+
+        .text-cp-black {
+            --tw-text-opacity: 1;
+            color: rgb(8 7 53 / var(--tw-text-opacity));
+        }
+
+        .text-cp-dark-blue {
+            --tw-text-opacity: 1;
+            color: #FB0000;
+        }
+
+        .text-cp-light-red {
+            --tw-text-opacity: 1;
+            color: #D84040;
+        }
+
+        .text-cp-light-grey {
+            --tw-text-opacity: 1;
+            color: rgb(132 143 167 / var(--tw-text-opacity));
+        }
+
+        .text-cp-pale-orange {
+            --tw-text-opacity: 1;
+            color: rgb(255 237 209 / var(--tw-text-opacity));
+        }
+
+        .text-gray-400 {
+            --tw-text-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-text-opacity));
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+        }
+
+        .opacity-0 {
+            opacity: 0;
+        }
+
+        .opacity-5 {
+            opacity: 0.05;
+        }
+
+        .shadow {
+            --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+
+        .shadow-\[0_10px_30px_0_\#D1D4DF40\] {
+            --tw-shadow: 0 10px 30px 0 #D1D4DF40;
+            --tw-shadow-colored: 0 10px 30px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+
+        .outline-none {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .duration-300 {
+            transition-duration: 300ms;
+        }
+
+        .placeholder\:font-normal::-moz-placeholder {
+            font-weight: 400;
+        }
+
+        .placeholder\:font-normal::placeholder {
+            font-weight: 400;
+        }
+
+        .placeholder\:text-cp-black::-moz-placeholder {
+            --tw-text-opacity: 1;
+            color: rgb(8 7 53 / var(--tw-text-opacity));
+        }
+
+        .placeholder\:text-cp-black::placeholder {
+            --tw-text-opacity: 1;
+            color: rgb(8 7 53 / var(--tw-text-opacity));
+        }
+
+        .even\:flex-row-reverse:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .last-of-type\:font-semibold:last-of-type {
+            font-weight: 600;
+        }
+
+        .last-of-type\:text-cp-black:last-of-type {
+            --tw-text-opacity: 1;
+            color: rgb(8 7 53 / var(--tw-text-opacity));
+        }
+
+        .invalid\:font-normal:invalid {
+            font-weight: 400;
+        }
+
+        .focus-within\:border-cp-dark-blue:focus-within {
+            --tw-border-opacity: 1;
+            border-color: rgb(49 46 203 / var(--tw-border-opacity));
+        }
+
+        .hover\:border-cp-dark-blue:hover {
+            --tw-border-opacity: 1;
+            border-color: rgb(49 46 203 / var(--tw-border-opacity));
+        }
+
+        .hover\:bg-gray-200:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+        }
+
+        .hover\:text-cp-dark-blue:hover {
+            --tw-text-opacity: 1;
+            color: rgba(255, 0, 0, 0.70);
+        }
+
+        .hover\:text-gray-900:hover {
+            --tw-text-opacity: 1;
+            color: rgb(17 24 39 / var(--tw-text-opacity));
+        }
+
+        .hover\:text-white:hover {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity));
+        }
+
+        .hover\:shadow-\[0_10px_30px_0_\#D1D4DF80\]:hover {
+            --tw-shadow: 0 10px 30px 0 #D1D4DF80;
+            --tw-shadow-colored: 0 10px 30px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+
+        .hover\:shadow-\[0_12px_30px_0_\#FF0000\]:hover {
+            --tw-shadow: 0 12px 30px 0 #FF0000;
+            --tw-shadow-colored: 0 12px 30px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+
+        @media (min-width: 640px) {
+            .sm\:w-\[603px\] {
+                width: 603px;
+            }
+
+            .sm\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sm\:flex-row {
+                flex-direction: row;
+            }
+
+            .sm\:gap-\[70px\] {
+                gap: 70px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\:inset-0 {
+                inset: 0px;
+            }
+
+            .md\:w-\[700px\] {
+                width: 700px;
+            }
+
+            .md\:w-1\/3 {
+                width: 33.333333%;
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .md\:p-5 {
+                padding: 1.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:mx-\[calc\(\(100vw-1130px\)\/2\)\] {
+                margin-left: calc((100vw - 1130px) / 2);
+                margin-right: calc((100vw - 1130px) / 2);
+            }
+
+            .lg\:w-1\/2 {
+                width: 50%;
+            }
+
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .lg\:flex-row {
+                flex-direction: row;
+            }
+
+            .lg\:flex-nowrap {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .xl\:mx-\[calc\(\(100vw-1130px\)\/2\)\] {
+                margin-left: calc((100vw - 1130px) / 2);
+                margin-right: calc((100vw - 1130px) / 2);
+            }
+
+            .xl\:flex-nowrap {
+                flex-wrap: nowrap;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .dark\:bg-gray-900\/80 {
+                background-color: rgb(17 24 39 / 0.8);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-poppins text-cp-black">
+    <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
+        <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
+            <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
+                <div class="flex items-center gap-3">
+                    <div class="flex shrink-0 h-[43px] overflow-hidden">
+                        <img src="public/assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <p id="CompanyName" class="font-extrabold text-xl leading-[30px]">BranApparel</p>
+                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">From Us to All Around The Worlds</p>
+                    </div>
+                </div>
+                <ul class="flex flex-wrap items-center gap-[30px]">
+                    <li
+                        class="text-cp-dark-blue
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+                        <a href="#">Home</a>
+                    </li>
+                    <li
+                        class="
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+                        <a href="#">Products</a>
+                    </li>
+                    <li
+                        class="
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li
+                        class="
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+                        <a href="#">Blog</a>
+                    </li>
+                    <li class="font-semibold hover:text-cp-dark-blue transition-all duration-300">
+                        <a href="">Gallery</a>
+                    </li>
+                    <li
+                        class="
+ font-semibold hover:text-cp-dark-blue transition-all duration-300">
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+                <a href="#"
+                    class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Hubungi
+                    Kami</a>
+            </nav>
+            <input type="hidden" name="path_video" id="path_video" value="path_video_from_db">
+            <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
+                <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit">
+                    <div class="w-5 h-5 flex shrink-0 overflow-hidden">
+                        <img src="public/assets/icons/crown.svg" class="object-contain" alt="icon">
+                    </div>
+                    <p class="font-semibold text-sm">Achievement From DB</p>
+                </div>
+                <div class="flex flex-col gap-[10px]">
+                    <h1 class="font-extrabold text-[50px] leading-[65px] max-w-[536px]">Heading From DB</h1>
+                    <p class="text-cp-light-grey leading-[30px] max-w-[437px]">Subheading From DB</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href=""
+                        class="bg-cp-dark-red p-5 w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">Lebih
+                        Banyak</a>
+                    <button
+                        class="bg-cp-darker-red p-5 w-fit rounded-xl font-bold text-white flex items-center gap-[10px]"
+                        onclick="{modal.show()}">
+                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                            <img src="public/assets/icons/play-circle.svg" class="w-full h-full object-contain" alt="icon">
+                        </div>
+                        <span>Watch Video</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
+            <img src="public/assets/photos/photo1.png" class="object-cover w-full h-full" alt="banner">
+        </div>
+    </div>
+    <div id="Clients" class="container max-w-[1130px] mx-auto flex flex-col justify-center text-center gap-5 mt-20">
+        <h2 class="font-bold text-lg">Partner Langganan Kami</h2>
+        <div class="logo-container flex flex-wrap gap-5 justify-center">
+            <div
+                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+                <div class="overflow-hidden h-9">
+                    <img src="public/assets/logo/logo-54.svg" class="object-contain w-full h-full" alt="logo">
+                </div>
+            </div>
+            <div
+                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+                <div class="overflow-hidden h-9">
+                    <img src="public/assets/logo/logo-52.svg" class="object-contain w-full h-full" alt="logo">
+                </div>
+            </div>
+            <div
+                class="logo-card h-[68px] w-fit flex items-center shrink-0 border border-[#E8EAF2] rounded-[18px] p-4 gap-[10px] bg-white hover:border-cp-dark-blue transition-all duration-300">
+                <div class="overflow-hidden h-9">
+                    <img src="public/assets/logo/logo-55.svg" class="object-contain w-full h-full" alt="logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="OurPrinciples" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+        <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-[14px]">
+                <p
+                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                    OUR VALUES</p>
+                <h2 class="font-bold text-4xl leading-[45px]">Kami Bukan Yang Pertama <br> Tetapi Kami Yang Terbaik</h2>
+            </div>
+            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
+        </div>
+        <div class="flex flex-wrap items-center gap-[30px] justify-center">
+            <div
+                class="card w-[356.67px] flex flex-col bg-white border border-[#E8EAF2] rounded-[20px] gap-[30px] overflow-hidden hover:border-cp-dark-blue transition-all duration-300">
+                <div class="thumbnail h-[200px] flex shrink-0 overflow-hidden">
+                    <img src="public/assets/photos/photo1.png" class="object-cover object-center w-full h-full"
+                        alt="thumbnails">
+                </div>
+                <div class="flex flex-col p-[0_30px_30px_30px] gap-5">
+                    <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
+                        <img src="public/assets/icons/cup.svg" class="w-full h-full object-contain" alt="icon">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <p class="title font-bold text-xl leading-[30px]">Principle Name From DB</p>
+                        <p class="leading-[30px] text-cp-light-grey">Subtitle From DB</p>
+                    </div>
+                    <a href="" class="font-semibold text-cp-dark-blue">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Stats" class="bg-cp-darker-red w-full mt-20">
+        <div class="container max-w-[1000px] mx-auto py-10">
+            <div class="flex flex-wrap items-center justify-between p-[10px]">
+                <div class="card w-[200px] flex flex-col items-center gap-[10px] text-center">
+                    <div class="w-[55px] h-[55px] flex shrink-0 overflow-hidden">
+                        <img src="public/assets/icons/cup-red.svg" class="object-contain w-full h-full" alt="icon">
+                    </div>
+                    <p class="text-cp-pale-orange font-bold text-4xl leading-[54px]">Goal from DB</p>
+                    <p class="text-cp-light-grey">Name from DB</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Products" class="container max-w-[1130px] mx-auto flex flex-col gap-20 mt-20">
+        <div class="product flex flex-wrap justify-center items-center gap-[60px] even:flex-row-reverse">
+            <div class="w-[400px] h-[550px] flex shrink-0 overflow-hidden rounded-[20px]">
+                <img src="public/assets/photos/photo1.png" class="w-full h-full object-cover rounded-[20px]"
+                    alt="thumbnail">
+            </div>
+            <div class="flex flex-col gap-[30px] py-[50px] h-fit max-w-[500px]">
+                <p
+                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                    Tagline From DB</p>
+                <div class="flex flex-col gap-[10px]">
+                    <h2 class="font-bold text-4xl leading-[45px]">Product Name From DB
+                    </h2>
+                    <p class="leading-[30px] text-cp-light-grey">About From DB</p>
+                </div>
+                <a href="#"
+                    class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
+                    Pesan Sekarang</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="#"
+                class="bg-cp-dark-red p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#FF0000] transition-all duration-300 font-bold text-white">
+                Load More</a>
+        </div>
+    </div>
+    <div id="Teams" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20">
+        <div class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] items-center">
+            <div class="flex flex-col gap-[14px] items-center">
+                <p
+                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                    KLIEN KAMI</p>
+                <h2 class="font-bold text-4xl leading-[45px] text-center">Kami Berbagi Mimpi yang Sama <br> Menjadi Yang
+                    Terbaik !
+                </h2>
+            </div>
+            <div
+                class="teams-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
+
+                <div
+                    class="card bg-white flex flex-col h-full justify-center items-center p-[30px] px-[29px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
+                    <div
+                        class="w-[100px] h-[100px] flex shrink-0 items-center justify-center rounded-full bg-[linear-gradient(150.55deg,_#007AFF_8.72%,_#312ECB_87.11%)]">
+                        <div class="w-[90px] h-[90px] rounded-full overflow-hidden">
+                            <img src="public/assets/photos/photo2.png" class="object-cover w-full h-full object-center"
+                                alt="photo">
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1 text-center">
+                        <p class="font-bold text-xl leading-[30px]">Team Name From DB</p>
+                        <p class="text-cp-light-grey">Occupation From DB</p>
+                    </div>
+                    <div class="flex items-center justify-center gap-[10px]">
+                        <div class="w-6 h-6 flex shrink-0">
+                            <img src="public/assets/icons/global.svg" alt="icon">
+                        </div>
+                        <p class="font-semibold">Location From DB</p>
+                    </div>
+                </div>
+
+                <a href="#" class="view-all-card">
+                    <div
+                        class="card bg-white flex flex-col h-full justify-center items-center p-[30px] gap-[30px] rounded-[20px] border border-white hover:shadow-[0_10px_30px_0_#D1D4DF80] hover:border-cp-dark-blue transition-all duration-300">
+                        <div class="w-[60px] h-[60px] flex shrink-0">
+                            <img src="public/assets/icons/profile-2user.svg" alt="icon">
+                        </div>
+                        <div class="flex flex-col gap-1 text-center">
+                            <p class="font-bold text-xl leading-[30px]">Lihat Semua</p>
+                            <p class="text-cp-light-grey">Pelanggan Setia Kami</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="Testimonials" class="w-full flex flex-col gap-[50px] items-center mt-20">
+        <div class="flex flex-col gap-[14px] items-center">
+            <p
+                class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                SUCCESS CLIENTS</p>
+            <h2 class="font-bold text-4xl leading-[45px] text-center">Kepercayaan Klien,<br>Kami Wujudkan!
+            </h2>
+        </div>
+        <div class="main-carousel w-full">
+            <div
+                class="carousel-card container max-w-[1130px] w-full flex flex-wrap justify-between items-center lg:mx-[calc((100vw-1130px)/2)]">
+                <div class="testimonial-container flex flex-col gap-[112px] w-[565px]">
+                    <div class="flex flex-col gap-[30px]">
+                        <div class="h-9 overflow-hidden">
+                            <img src="public/assets/logo/logo-51.svg" class="object-contain" alt="icon">
+                        </div>
+                        <div class="relative pt-[27px] pl-[30px]">
+                            <div class="absolute top-0 left-0">
+                                <img src="public/assets/icons/quote.svg" alt="icon">
+                            </div>
+                            <p class="font-semibold text-2xl leading-[46px] relative z-10">Message From DB
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pl-[30px]">
+                            <div class="flex items-center gap-6">
+                                <div class="w-[60px] h-[60px] flex shrink-0 rounded-full overflow-hidden">
+                                    <img src="public/assets/photos/photo2.png" class="w-full h-full object-cover"
+                                        alt="photo">
+                                </div>
+                                <div class="flex flex-col justify-center gap-1">
+                                    <p class="font-bold">Client Name From DB</p>
+                                    <p class="text-sm text-cp-light-grey">Occupation from DB</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-nowrap">
+                                <div class="w-6 h-6 flex shrink-0">
+                                    <img src="public/assets/icons/Star-rating.svg" alt="star">
+                                </div>
+                                <div class="w-6 h-6 flex shrink-0">
+                                    <img src="public/assets/icons/Star-rating.svg" alt="star">
+                                </div>
+                                <div class="w-6 h-6 flex shrink-0">
+                                    <img src="public/assets/icons/Star-rating.svg" alt="star">
+                                </div>
+                                <div class="w-6 h-6 flex shrink-0">
+                                    <img src="public/assets/icons/Star-rating.svg" alt="star">
+                                </div>
+                                <div class="w-6 h-6 flex shrink-0">
+                                    <img src="public/assets/icons/Star-rating.svg" alt="star">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-indicator flex items-center justify-center gap-2 h-4 shrink-0">
+                    </div>
+                </div>
+                <div class="testimonial-thumbnail w-[470px] h-[550px] rounded-[20px] overflow-hidden bg-[#D9D9D9]">
+                    <img src="public/assets/photos/photo1.png" class="w-full h-full object-cover object-center"
+                        alt="thumbnail">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
+        <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-[14px]">
+                <p
+                    class="badge w-fit bg-cp-pale-blue text-cp-light-red p-[8px_16px] rounded-full uppercase font-bold text-sm">
+                    GALLERY</p>
+                <h2 class="font-bold text-4xl leading-[45px]">Lihat lebih dekat bagaimana kami<br>menghadirkan baju
+                    custom berkualitas!</h2>
+            </div>
+            <a href="" class="bg-cp-darker-red p-[14px_20px] w-fit rounded-xl font-bold text-white">Selengkapnya</a>
+        </div>
+        <div
+            class="awards-card-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] justify-center">
+            <div
+                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
+                <div class="w-[55px] h-[55px] flex shrink-0">
+                    <img src="public/assets/icons/cup-red.svg" alt="icon">
+                </div>
+                <hr class="border-[#E8EAF2]">
+                <p class="font-bold text-xl leading-[30px]">Proses Produksi</p>
+                <hr class="border-[#E8EAF2]">
+                <p class="text-cp-light-grey">Setiap baju dibuat dengan ketelitian dan bahan berkualitas untuk hasil
+                    terbaik.</p>
+            </div>
+            <div
+                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
+                <div class="w-[55px] h-[55px] flex shrink-0">
+                    <img src="public/assets/icons/cup-red.svg" alt="icon">
+                </div>
+                <hr class="border-[#E8EAF2]">
+                <p class="font-bold text-xl leading-[30px]">Proses Desain</p>
+                <hr class="border-[#E8EAF2]">
+                <p class="text-cp-light-grey">Dari ide ke realitas! Kami wujudkan desain custom yang sesuai dengan Anda.
+                </p>
+            </div>
+            <div
+                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
+                <div class="w-[55px] h-[55px] flex shrink-0">
+                    <img src="public/assets/icons/cup-red.svg" alt="icon">
+                </div>
+                <hr class="border-[#E8EAF2]">
+                <p class="font-bold text-xl leading-[30px]">Proses Packing</p>
+                <hr class="border-[#E8EAF2]">
+                <p class="text-cp-light-grey">Dikemas dengan rapi dan aman, memastikan pesanan Anda sampai dalam kondisi
+                    sempurna.</p>
+            </div>
+            <div
+                class="card bg-white flex flex-col h-full p-[30px] gap-[30px] rounded-[20px] border border-[#E8EAF2] hover:border-cp-dark-blue transition-all duration-300">
+                <div class="w-[55px] h-[55px] flex shrink-0">
+                    <img src="public/assets/icons/cup-red.svg" alt="icon">
+                </div>
+                <hr class="border-[#E8EAF2]">
+                <p class="font-bold text-xl leading-[30px]">Proses Quality Control</p>
+                <hr class="border-[#E8EAF2]">
+                <p class="text-cp-light-grey">Kami cek setiap detail agar hanya produk terbaik yang Anda terima!</p>
+            </div>
+        </div>
+    </div>
+    <div id="FAQ" class="bg-[#F6F7FA] w-full py-20 px-[10px] mt-20 -mb-20">
+        <div class="container max-w-[1000px] mx-auto">
+            <div class="flex flex-col lg:flex-row gap-[50px] sm:gap-[70px] items-center">
+                <div class="flex flex-col gap-[30px]">
+                    <div class="flex flex-col gap-[10px]">
+                        <h2 class="font-bold text-4xl leading-[45px]">Frequently Asked Questions</h2>
+                    </div>
+                    <a href="#" class="p-5 bg-cp-darker-red rounded-xl text-white w-fit font-bold">Hubungi
+                        Kami</a>
+                </div>
+                <div class="flex flex-col gap-[30px] sm:w-[603px] shrink-0">
+                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                        <button class="accordion-button flex justify-between gap-1 items-center"
+                            data-accordion="accordion-faq-1">
+                            <span class="font-bold text-lg leading-[27px] text-left">Berapa lama waktu produksi untuk
+                                baju
+                                custom?</span>
+                            <div class="arrow w-9 h-9 flex shrink-0">
+                                <img src="public/assets/icons/arrow-circle-down.svg" class="transition-all duration-300"
+                                    alt="icon">
+                            </div>
+                        </button>
+                        <div id="accordion-faq-1" class="accordion-content hide">
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Waktu produksi bervariasi, biasanya
+                                5-10
+                                hari kerja, tergantung pada jumlah pesanan dan tingkat kerumitan desain. Kami akan
+                                menginformasikan estimasi waktu sebelum produksi dimulai.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                        <button class="accordion-button flex justify-between gap-1 items-center"
+                            data-accordion="accordion-faq-2">
+                            <span class="font-bold text-lg leading-[27px] text-left">Apakah bisa membuat desain sendiri
+                                atau
+                                harus dari template?</span>
+                            <div class="arrow w-9 h-9 flex shrink-0">
+                                <img src="public/assets/icons/arrow-circle-down.svg" class="transition-all duration-300"
+                                    alt="icon">
+                            </div>
+                        </button>
+                        <div id="accordion-faq-2" class="accordion-content hide">
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Tentu! Anda bisa mengirimkan desain
+                                sendiri atau memilih dari template yang kami sediakan. Tim kami juga siap membantu
+                                menyempurnakan desain Anda.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                        <button class="accordion-button flex justify-between gap-1 items-center"
+                            data-accordion="accordion-faq-3">
+                            <span class="font-bold text-lg leading-[27px] text-left">Apakah ada minimum order untuk
+                                pemesanan custom?</span>
+                            <div class="arrow w-9 h-9 flex shrink-0">
+                                <img src="public/assets/icons/arrow-circle-down.svg" class="transition-all duration-300"
+                                    alt="icon">
+                            </div>
+                        </button>
+                        <div id="accordion-faq-3" class="accordion-content hide">
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menerima pemesanan mulai dari 1
+                                pcs,
+                                tetapi untuk jumlah besar, kami menawarkan harga spesial!</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col p-5 rounded-2xl bg-white w-full">
+                        <button class="accordion-button flex justify-between gap-1 items-center"
+                            data-accordion="accordion-faq-4">
+                            <span class="font-bold text-lg leading-[27px] text-left">Bahan dan jenis sablon apa saja
+                                yang
+                                tersedia?</span>
+                            <div class="arrow w-9 h-9 flex shrink-0">
+                                <img src="public/assets/icons/arrow-circle-down.svg" class="transition-all duration-300"
+                                    alt="icon">
+                            </div>
+                        </button>
+                        <div id="accordion-faq-4" class="accordion-content hide">
+                            <p class="leading-[30px] text-cp-light-grey pt-[14px]">Kami menyediakan berbagai pilihan
+                                bahan
+                                berkualitas, seperti Cotton Combed, Polyester, dan Dri-Fit. Untuk sablon, tersedia
+                                Plastisol, Polyflex, DTG, dan Sublimasi, sesuai kebutuhan Anda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-cp-darker-red w-full relative overflow-hidden mt-20">
+        <div
+            class="container max-w-[1130px] mx-auto flex flex-wrap gap-y-4 items-center justify-between pt-[100px] pb-[220px] relative z-10">
+            <div class="flex flex-col gap-10">
+                <div class="flex items-center gap-3">
+                    <div class="flex shrink-0 h-[43px] overflow-hidden">
+                        <img src="public/assets/logo/logo.svg" class="object-contain w-full h-full" alt="logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <p id="CompanyName" class="font-extrabold text-xl leading-[30px] text-white">BranApparel</p>
+                        <p id="CompanyTagline" class="text-sm text-cp-light-grey">From Us to All Around The Worlds</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a
+                        href="https://wa.me/+6285162808272?text=Halo%20Admin%2C%20Saya%20ingin%20memesan%20produk%20di%20Bran%20Apparel">
+                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                            <img src="public/assets/icons/whatsapp.svg" class="w-full h-full object-contain"
+                                alt="whatsapp">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                            <img src="public/assets/icons/facebook.svg" class="w-full h-full object-contain"
+                                alt="facebook">
+                        </div>
+                    </a>
+                    <a
+                        href="https://www.instagram.com/branapparell?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                        <div class="w-6 h-6 flex shrink-0 overflow-hidden">
+                            <img src="public/assets/icons/instagram.svg" class="w-full h-full object-contain"
+                                alt="instagram">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-[50px]">
+                <div class="flex flex-col w-[200px] gap-3">
+                    <p class="font-bold text-lg text-white">Products</p>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">General
+                        Contract</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Building
+                        Assessment</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">3D Paper
+                        Builder</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Legal
+                        Constructions</a>
+                </div>
+                <div class="flex flex-col w-[200px] gap-3">
+                    <p class="font-bold text-lg text-white">About</p>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">We’re
+                        Hiring</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Our Big
+                        Purposes</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Investor
+                        Relations</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Media
+                        Press</a>
+                </div>
+                <div class="flex flex-col w-[200px] gap-3">
+                    <p class="font-bold text-lg text-white">Useful Links</p>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Privacy &
+                        Policy</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">Terms &
+                        Conditions</a>
+                    <a href="contact.html" class="text-cp-light-grey hover:text-white transition-all duration-300">Hubungi
+                        Kami</a>
+                    <a href="" class="text-cp-light-grey hover:text-white transition-all duration-300">
+                </div>
+            </div>
+        </div>
+        <div class="absolute -bottom-[135px] w-full">
+            <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">BranApparel</p>
+        </div>
+    </footer>
+    <div id="video-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full lg:w-1/2 max-h-full">
+            <div class="relative bg-white rounded-[20px] overflow-hidden shadow">
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                    <h3 class="text-xl font-semibold text-cp-black">
+                        Company Profile Video
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                        onclick="{modal.hide()}">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <div class="">
+                    <iframe id="videoFrame" class="aspect-[16/9]" width="100%" src=""
+                        title="Demo Project Laravel Portfolio" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        // public/js/carousel.js
+        $(document).ready(function () {
+            $('.main-carousel').flickity({
+                contain: true,
+                autoPlay: 3000,
+                prevNextButtons: false,
+                pageDots: false,
+                wrapAround: true,
+            });
+
+            let cards = $('.carousel-card');
+
+            function createIndicators() {
+                let totalCards = cards.length;
+                cards.each(function (index) {
+                    let indicatorContainer = $(this).find('.carousel-indicator');
+                    indicatorContainer.empty();
+                    for (let i = 0; i < totalCards; i++) {
+                        let button = $('<button></button>');
+                        let dot = $('<div></div>');
+                        if (i === index) {
+                            button.addClass('button h-4');
+                            dot.addClass('w-10 h-1 rounded-full bg-cp-dark-red');
+                        } else {
+                            button.addClass('button h-4');
+                            dot.addClass('w-10 h-1 rounded-full bg-[#E8EAF2]');
+                        }
+                        dot.appendTo(button);
+                        button.appendTo(indicatorContainer);
+                    }
+                });
+            }
+
+            createIndicators();
+
+            $('.carousel-indicator').on('click', '.button', function () {
+                let index = $(this).index();
+                $('.main-carousel').flickity('select', index);
+            });
+        });
+
+        // public/js/accordion.js
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionBtns = document.querySelectorAll('.accordion-button');
+
+            accordionBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetId = this.dataset.accordion;
+                    const targetAccordion = document.getElementById(targetId);
+                    const arrowIcon = this.querySelector('.arrow img');
+
+                    btn.classList.toggle('open');
+                    targetAccordion.classList.toggle('hide');
+
+                    if (targetAccordion.classList.contains('hide')) {
+                        targetAccordion.style.maxHeight = "0";
+                    } else {
+                        targetAccordion.style.maxHeight = targetAccordion.scrollHeight + "px";
+                    }
+
+                    arrowIcon.classList.toggle('rotate-180');
+                });
+            });
+        });
+
+        // public/js/modal-video.js
+        let videoFrame = document.getElementById('videoFrame');
+        const targetEl = document.getElementById('video-modal');
+        const pathVideo = document.getElementById('path_video').value;
+
+        const options = {
+            placement: 'bottom-right',
+            backdrop: 'dynamic',
+            backdropClasses: 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40',
+            closable: true,
+            onHide: () => {
+                videoFrame.removeAttribute('src');
+            },
+            onShow: () => {
+                videoFrame.src = 'https://www.youtube.com/embed/' + pathVideo;
+            },
+        };
+
+        const modal = new Modal(targetEl, options);
+    </script>
+</body>
+
+</html>
